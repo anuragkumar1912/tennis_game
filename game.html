@@ -1,0 +1,40 @@
+<html>
+anurag
+<canvas id="gameCanvas" width="800" height="600"></canvas>
+
+<script>
+var canvas;
+var canvasContext;
+var ballX = 50;
+var ballSpeedX = 5;
+window.onload = function() {
+	
+	canvas = document.getElementById('gameCanvas');
+	canvasContext = canvas.getContext('2d');
+        var framePerSecond = 30;
+	setInterval(function(){
+                             moveEverything();
+                             drawEverything();
+                            },1000/framePerSecond);
+}
+function moveEverything() {
+            ballX = ballX + ballSpeedX;
+            ballSpeedX = ballSpeedX + 1;
+}
+
+function drawEverything() {
+        
+        canvasContext.fillStyle = 'black';
+	canvasContext.fillRect(0,0,canvas.width,canvas.height);
+        canvasContext.fillStyle = 'white';
+	canvasContext.fillRect(0,150,10,150);
+        canvasContext.fillStyle = 'red';
+	canvasContext.fillRect(ballX,100,10,10);
+
+
+
+}
+
+</script>
+
+</html>
